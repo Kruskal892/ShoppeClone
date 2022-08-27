@@ -28,6 +28,10 @@
   animation: fadeIn ease-in-out 0.3s;
 }
 
+.header__navbar-item-show:hover .header__noti{
+  display: block;
+}
+
 .header__navbar-item:hover,
 .header__navbar-item-link:hover {
     cursor: pointer;
@@ -105,4 +109,124 @@
 .header__qr-downloads{
   height: 16px;
 
+}
+
+/* Notifications */
+
+
+.header__noti{
+  position: absolute;
+  top: 100%; 
+  right: 0; 
+  width: 420px;
+  border: 1px solid #D3D3D3;
+  background-color: var(--white-color);
+  cursor: default;
+  display: none ;
+  transform-origin: calc(100% - 20px) top ;
+  animation: headerNotiAnimation ease-in-out 0.2s;
+}
+
+.header__noti::before{
+  content: "";
+  border: 25px solid ;
+  border-color: transparent transparent var(--white-color) transparent;
+  position: absolute;
+  right: 0px;
+  top: -35px
+}
+
+.header__noti::after{
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -20px;
+  width: 90px;
+  height: 20px;
+}
+
+@keyframes headerNotiAnimation {
+  from {
+    transform: scale(0);
+
+  }to {
+    transform: scale(1);
+  }
+}
+
+
+.header__noti-header{
+  height: 40px;
+  background-color: var(--white-color);
+  
+}
+
+.header__noti-header h3 {
+  color: rgb(180, 180, 180);
+  margin: 0 0 0 12px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 40px;
+  user-select: none;
+}
+
+.header__noti-list{
+  padding-left: 0;
+}
+
+.header__noti-item{
+}
+
+.header__noti-item:hover{
+  background-color: rgb(218, 215, 215);
+  cursor: pointer;
+}
+
+.header__noti-link{
+  display: flex;
+  padding: 12px;
+  width: 100%;
+}
+
+.header__noti-img{
+  width: 50px;
+  object-fit: contain;
+
+}
+
+.header__noti-info{
+margin-left: 12px;
+}
+
+.header__noti-name{
+  display: block;
+  font-size: 0.85rem;
+  color: var(--black-color);
+  font-weight: 450;
+  line-height: 1.2rem;
+}
+
+
+
+.header__noti-content{
+  display: block;
+  font-size: 0.75 rem;
+  line-height: 1.4rem;
+  color: #756F6E;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.header__noti-footer{
+  display: flex;
+}
+.header__noti-footer-btn{
+  margin: auto;
+  text-decoration: none;
+  color: var(--black-color);
+  padding: 6px 0;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
 }
